@@ -40,9 +40,6 @@ const getPost = async (req, res) => {
  */
 
 const createPost = async (req, res) => {
-  if (!req.body) {
-    return res.status(400).send("Request body missing");
-  }
   try {
     const post = await Post.create(req.body);
     res.status(201).send(post);
